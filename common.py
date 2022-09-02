@@ -1,9 +1,21 @@
 import os
 from datetime import datetime
 
-# https://stackoverflow.com/questions/15054434/how-can-i-open-files-in-external-programs-in-python
+def checkDepDirs():
+    checkDir('\\Projects')
+    checkDir('\\Templates')
+
 def startFile(name):
+    # https://stackoverflow.com/questions/15054434/how-can-i-open-files-in-external-programs-in-python
     os.system('start ' + name)
+
+def createFile(name, openFile = False, printFile = False):
+    cwd = os.getcwd()
+    path = cwd + name
+    with open(path, mode = 'x'): pass
+
+    if openFile == True: startFile(path)
+    if printFile == True: print('\'{0}\' has been created.'.format(path))
 
 def printTime():
     # Datetime tutorial from https://www.programiz.com/python-programming/datetime/current-time
@@ -18,17 +30,21 @@ def printLogo():
     print('--------------------')
     print('---Made by A3therium')
 
-def checkDirs():
+def checkDir(path, toPrint = False, toReturn = False):
     cdir = os.getcwd()
+    folder = cdir + path
 
-    cdirPython = cdir + '//Python'
-    # Python Check
-    if os.path.exists(cdirPython) == False:
-        os.mkdir(cdirPython)
+    if os.path.exists(folder) == False:
+        os.mkdir(folder)
+        if toPrint == True: print('Made Directory: '+folder)
+        if toReturn == True: return(False)
+        
+    if toPrint == True:
+        print(folder + ' already exists.')
 
-    cdirHTML = cdir + '//HTML'
-    if os.path.exists(cdirHTML) == False:
-        os.mkdir(cdirHTML)
+    if toReturn == True:
+        return(True)
+
 
 
     

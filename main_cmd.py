@@ -1,7 +1,7 @@
 from common import *
-from mkProject import *
+from projectCreation import *
 
-checkDirs()
+checkDepDirs()
 
 printLogo()
 printTime()
@@ -13,8 +13,8 @@ while True:
     # Help
     if cmd == 'help' or cmd == 'h':
         commands = [['time','prints the current date & time'],
-                    ['mk python','makes a new python project'],
-                    ['mk html','makes a new html project'],
+                    ['mk project','makes a new project using a previously made template'],
+                    ['mk template','makes a new template'],
                     ['exit','exits the program']]
         print('Command List: ')
         for i in commands:
@@ -24,13 +24,13 @@ while True:
     elif cmd == 'time':
         printTime()
 
-    # New python project
-    elif cmd == 'mk python':
-        mkProjectPython()
+    # New project
+    elif cmd == 'mk project':
+        mkProject()
 
-    # New html project
-    elif cmd == 'mk html':
-        mkProjectHTML()
+    # New Template
+    elif cmd == 'mk template':
+        mkTemplate()
 
     # Quit
     elif cmd == 'exit':
