@@ -6,19 +6,21 @@ checkDepDirs()
 printLogo()
 printTime()
 
+commands = ['time : prints the current date & time',
+            'mk project : makes a new project using a previously made template',
+            'mk template : makes a new template',
+            'ls template : lists current templates',
+            'rm template : removes templates',
+            'exit : exits the program']
+
 # Loop
 while True:
     cmd = input('[]:').casefold().strip()
 
     # Help
     if cmd == 'help' or cmd == 'h':
-        commands = [['time','prints the current date & time'],
-                    ['mk project','makes a new project using a previously made template'],
-                    ['mk template','makes a new template'],
-                    ['exit','exits the program']]
-        print('Command List: ')
-        for i in commands:
-            print(' - {0}: {1}'.format(i[0],i[1]))
+
+        printList(commands, 'Command list:')
 
     # Time
     elif cmd == 'time':
@@ -31,6 +33,14 @@ while True:
     # New Template
     elif cmd == 'mk template':
         mkTemplate()
+
+    # List Templates
+    elif cmd == 'ls template':
+        lsTemplate()
+
+    # Remove Template
+    elif cmd == 'rm template':
+        rmTemplate()
 
     # Quit
     elif cmd == 'exit':

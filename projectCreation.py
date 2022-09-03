@@ -26,9 +26,7 @@ def mkTemplate():
 def mkProject():
     cwd = os.getcwd()
     projectList = os.listdir(cwd + '\\Templates')
-    print('Choose Template:')
-    for i in projectList:
-        print(' - '+ i)
+    printList(projectList, 'Choose template:')
 
     template = input('[]:')
     if not template in projectList:
@@ -44,4 +42,19 @@ def mkProject():
 
     os.startfile(dstDir)
 
+# List Templates
+def lsTemplate():
+    cwd = os.getcwd()
+    projectList = os.listdir(cwd + '\\Templates')
+    printList(projectList, 'Templates:')
 
+# Remove templates
+def rmTemplate():
+    cwd = os.getcwd()
+    projectList = os.listdir(cwd + '\\Templates')
+    printList(projectList, 'Templates:')
+    template = input('Choose a template : ')
+    try: 
+        shutil.rmtree(cwd + '\\Templates\\' + template)
+        print('Template removed.')
+    except: print('Template not found.')

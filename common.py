@@ -45,6 +45,7 @@ def checkDir(path, toPrint = False, toReturn = False):
     if toReturn == True:
         return(True)
 
-
-
-    
+def printList(array, msg = ''):
+    print(msg)
+    for i in array:
+        print(' - ' + i)
