@@ -11,6 +11,8 @@ commands = ['time : prints the current date & time',
             'mk template : makes a new template',
             'ls template : lists current templates',
             'rm template : removes templates',
+            'ls project : lists current projects',
+            'rm project : removes projects',
             'exit : exits the program']
 
 # Loop
