@@ -1,5 +1,5 @@
 from common import *
-from projectCreation import *
+from projectSystem import *
 
 checkDepDirs()
 
@@ -19,7 +19,6 @@ while True:
 
     # Help
     if cmd == 'help' or cmd == 'h':
-
         printList(commands, 'Command list:')
 
     # Time
@@ -41,6 +40,14 @@ while True:
     # Remove Template
     elif cmd == 'rm template':
         rmTemplate()
+
+    # List Projects
+    elif cmd == 'ls project':
+        lsProject()
+
+    # Remove Projecy
+    elif cmd == 'rm project':
+        rmProject()
 
     # Quit
     elif cmd == 'exit':
