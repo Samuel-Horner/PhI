@@ -12,10 +12,14 @@ def startFile(name):
 def createFile(name, openFile = False, printFile = False):
     cwd = os.getcwd()
     path = cwd + name
-    with open(path, mode = 'x'): pass
+    if os.path.exists(path) == False:
+        with open(path, mode = 'x'): pass
+        if openFile == True: startFile(path)
+        if printFile == True: print('\'{0}\' has been created.'.format(path))
+        return()
 
-    if openFile == True: startFile(path)
-    if printFile == True: print('\'{0}\' has been created.'.format(path))
+    if printFile == True:
+        print(path + ' already exists')
 
 def printTime():
     # Datetime tutorial from https://www.programiz.com/python-programming/datetime/current-time
@@ -38,6 +42,7 @@ def checkDir(path, toPrint = False, toReturn = False):
         os.mkdir(folder)
         if toPrint == True: print('Made Directory: '+folder)
         if toReturn == True: return(False)
+        else: return()
         
     if toPrint == True:
         print(folder + ' already exists.')

@@ -1,19 +1,23 @@
 from common import *
 from projectSystem import *
+from directoryManagement import *
 
 checkDepDirs()
 
 printLogo()
 printTime()
 
-commands = ['time : prints the current date & time',
-            'mk project : makes a new project using a previously made template',
-            'mk template : makes a new template',
-            'ls template : lists current templates',
-            'rm template : removes templates',
-            'ls project : lists current projects',
-            'rm project : removes projects',
+commandsMisc = ['time : prints the current date & time',
+            'ls : lists files in specified directory',
+            'mkdir : creates a new directory',
             'exit : exits the program']
+
+commandsProjectSystem = ['mk project : makes a new project using a previously made template',
+                    'mk template : makes a new template',
+                    'ls template : lists current templates',
+                    'rm template : removes templates',
+                    'ls project : lists current projects',
+                    'rm project : removes projects']
 
 # Loop
 while True:
@@ -21,7 +25,8 @@ while True:
 
     # Help
     if cmd == 'help' or cmd == 'h':
-        printList(commands, 'Command list:')
+        printList(commandsMisc, 'Misc commands: ')
+        printList(commandsProjectSystem, '\nProject system commands: ')
 
     # Time
     elif cmd == 'time':
@@ -47,9 +52,17 @@ while True:
     elif cmd == 'ls project':
         lsProject()
 
-    # Remove Projecy
+    # Remove Project
     elif cmd == 'rm project':
         rmProject()
+
+    # Make a folder
+    elif cmd == 'mkdir':
+        mkDir()
+
+    # Lists files/folders
+    elif cmd == 'ls':
+        ls()
 
     # Quit
     elif cmd == 'exit':
