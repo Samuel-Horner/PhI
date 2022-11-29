@@ -9,7 +9,8 @@ printTime()
 
 commandsMisc = ['time : prints the current date & time',
             'ls : lists files in specified directory',
-            'mkdir : creates a new directory',
+            'mk dir : creates a new directory',
+            'rm dir : removes specified directory',
             'exit : exits the program']
 
 commandsProjectSystem = ['mk project : makes a new project using a previously made template',
@@ -57,8 +58,12 @@ while True:
         rmProject()
 
     # Make a folder
-    elif cmd == 'mkdir':
+    elif cmd == 'mk dir':
         mkDir()
+
+    # Remove a folder
+    elif cmd == 'rm dir':
+        rmDir()
 
     # Lists files/folders
     elif cmd == 'ls':

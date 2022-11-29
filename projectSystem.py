@@ -35,6 +35,12 @@ def mkProject():
 
     projectName = input('Project name: ')
 
+    try: 
+        os.listdir(cwd + '\\Projects\\' + projectName)
+        print('\'{0}\' already exists'.format(projectName))
+        return()
+    except: print('Creating project {0}'.format(projectName))
+
     # Copies Directory
     srcDir = cwd + '\\Templates\\' + template
     dstDir =  cwd + '\\Projects\\' + projectName

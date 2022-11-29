@@ -1,9 +1,18 @@
 from common import *
 import os
+import shutil
 
 def mkDir():
-    dirName = input('Enter valid folder name: ')
-    checkDir('\\' + dirName, toPrint = True)
+    path = input('Enter valid folder name: ')
+    checkDir('\\' + path, toPrint = True)
+
+def rmDir():
+    cwd = os.getcwd()
+    path = input('Enter path to the directory you wish to delete: ') 
+    try: 
+        shutil.rmtree(cwd + '\\' + path)
+        print('Project removed.')
+    except: print('Project not found.')
 
 def ls():
     cwd = os.getcwd()
