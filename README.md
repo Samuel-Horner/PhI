@@ -1,4 +1,6 @@
 # PhI
 A collection of utilities for my python/html projects
 
- ## Usage:
+## Usage:
+- help displays commands
+-  ### Project manager:
