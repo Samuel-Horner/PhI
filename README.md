@@ -1,5 +1,5 @@
 # PhI
-A collection of utilities for my python/html projects
+A collection of organisation utilities for my projects
 
 ## Usage:
 -  ### Project manager:
